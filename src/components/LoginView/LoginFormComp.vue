@@ -5,10 +5,14 @@ const profile = ref({
   username: "",
   password: "",
 });
+
+async function submit() {
+  alert("接口未实现");
+}
 </script>
 
 <template>
-  <form action="#" @submit.prevent>
+  <form action="#" @submit.prevent="submit">
     <div class="account-icon-box">
       <img src="/src/assets/icons/account-circle-fill-white.svg" />
     </div>
@@ -37,8 +41,8 @@ const profile = ref({
     <input type="submit" value="登录" />
 
     <div class="register-and-forget-password">
-      <a href="javascript:void(0)">立即注册</a>
-      <a href="javascript:void(0)">忘记密码</a>
+      <a href="javascript:void(0)" @click="$router.push({ name: 'register' })">立即注册</a>
+      <a href="javascript:void(0)" @click="$router.push({ name: 'forget password' })">忘记密码</a>
     </div>
   </form>
 </template>
@@ -50,7 +54,7 @@ form {
   width: 40rem;
   height: 50rem;
   background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid #ffffff;
+  border: 0.1rem solid #ffffff;
   border-radius: 5px;
 
   position: fixed;
@@ -86,24 +90,29 @@ form .password-box {
   padding: 0 2.5rem;
   width: 35rem;
   height: 5rem;
-  border: 1px solid #ffffff;
+  border: 0.1rem solid #ffffff;
   border-radius: 2.5rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-form .username-box img,
-form .password-box img {
+form .username-box label,
+form .password-box label {
   width: 3rem;
   height: 3rem;
   cursor: pointer;
 }
+form .username-box img,
+form .password-box img {
+  width: 3rem;
+  height: 3rem;
+}
 form .username-box input,
 form .password-box input {
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
 
-  flex: 1;
+  width: 27rem;
   height: 5rem;
   background-color: transparent;
   border: none;
@@ -158,5 +167,74 @@ form .register-and-forget-password a {
 }
 form .register-and-forget-password a:hover {
   text-decoration: underline;
+}
+
+/* 媒体查询实现响应式 */
+
+@media screen and (orientation: portrait) {
+  form {
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+
+@media screen and (width <= 500px) {
+  /* 表单整体样式 */
+  form {
+    width: 30rem;
+    height: 40rem;
+  }
+
+  /* 登录图标样式 */
+
+  form .account-icon-box {
+    height: 15rem;
+  }
+  form .account-icon-box img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  /* 用户名和密码样式 */
+
+  form .username-box,
+  form .password-box {
+    padding: 0 2rem;
+    width: 25rem;
+    height: 4rem;
+    border-radius: 2rem;
+  }
+  form .username-box label,
+  form .password-box label {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  form .username-box img,
+  form .password-box img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  form .username-box input,
+  form .password-box input {
+    padding: 0 0 0 1rem;
+
+    width: 18.5rem;
+    height: 4rem;
+  }
+
+  /* 提交按钮样式 */
+  form input[type="submit"] {
+    width: 25rem;
+    height: 4rem;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 2rem;
+  }
+
+  /* 注册与忘记密码样式 */
+
+  form .register-and-forget-password {
+    width: 25rem;
+  }
 }
 </style>

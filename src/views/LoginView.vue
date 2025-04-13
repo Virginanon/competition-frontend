@@ -17,4 +17,10 @@ main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+@media screen and (orientation: portrait) {
+  main {
+    background-size: cover;
+  }
+}
 </style>
