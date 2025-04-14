@@ -20,7 +20,12 @@ const router = createRouter({
     {
       path: "/forget-password",
       name: "forget password",
-      component: () => import("@/views/ForgetPassword.vue"),
+      component: () => import("@/views/ForgetPasswordView.vue"),
+    },
+    {
+      path: "/home",
+      name: "home",
+      component: () => import("@/views/HomeView.vue"),
     },
   ],
   strict: true,

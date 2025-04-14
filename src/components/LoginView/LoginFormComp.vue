@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const profile = ref({
   username: "",
@@ -8,6 +11,7 @@ const profile = ref({
 
 async function submit() {
   alert("接口未实现");
+  router.replace({ name: "home" });
 }
 </script>
 

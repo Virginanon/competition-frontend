@@ -4,7 +4,6 @@ import LoginFormComp from "@/components/LoginView/LoginFormComp.vue";
 
 <template>
   <main>
-    <h2></h2>
     <LoginFormComp></LoginFormComp>
   </main>
 </template>
@@ -13,14 +12,14 @@ import LoginFormComp from "@/components/LoginView/LoginFormComp.vue";
 main {
   width: 100dvw;
   height: 100dvh;
-  background-image: url(/src/assets/images/login-bg2.jpg);
+  background-image: url(/src/assets/images/login-bg-landscape.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 @media screen and (orientation: portrait) {
   main {
-    background-size: cover;
+    background-image: url(/src/assets/images/login-bg-portrait.jpg);
   }
 }
 </style>

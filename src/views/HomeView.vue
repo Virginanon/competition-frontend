@@ -1,9 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <main>
-    <h2>This is Register Page</h2>
-  </main>
+  <h2>This is Home Page</h2>
 </template>
 
 <style scoped></style>
